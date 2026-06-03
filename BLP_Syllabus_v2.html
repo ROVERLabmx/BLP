@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROVER · Brand Launch Program™ — Syllabus</title>
+<title>ROVER · Brand Launch Program™: Syllabus</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -720,12 +720,14 @@ body {
   .page {
     width: 8.5in !important;
     max-width: 8.5in !important;
-    min-height: 11in !important;
+    height: 11in !important;
     margin: 0 !important;
     box-shadow: none !important;
     box-sizing: border-box !important;
     page-break-after: always;
     break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
     overflow: hidden;
     position: relative;
   }
@@ -951,8 +953,137 @@ body {
   /* Ensure pages are position:relative so footer can anchor */
   .page {
     position: relative !important;
-    padding-bottom: 40px !important;
   }
+}
+
+
+/* ════════════════════════════════════════
+   MOBILE RESPONSIVE  (≤ 768px)
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Body ── */
+  body { font-size: 13px; }
+
+  /* ── All pages: full-width, reduced padding ── */
+  .page { margin-bottom: 12px; }
+
+  /* ── Cover ── */
+  .cover { padding: 40px 24px 32px; min-height: 100svh; }
+  .cover-wordmark { font-size: 9px; letter-spacing: 2px; margin-bottom: 40px; }
+  .cover-title, .cover-title-light { font-size: 34px; }
+  .cover-tagline { font-size: 11px; }
+  .cover-meta { font-size: 9px; flex-wrap: wrap; gap: 8px; }
+
+  /* ── Accent page ── */
+  .accent-page { padding: 48px 24px; min-height: auto; }
+  .accent-headline { font-size: 22px; line-height: 1.25; }
+  .accent-body { font-size: 13px; }
+
+  /* ── Inner content pages ── */
+  .inner       { padding: 40px 24px; }
+  .inner.dense { padding: 28px 24px; }
+
+  /* ── Section typography ── */
+  .section-title { font-size: 22px; }
+  .section-sub   { font-size: 12px; }
+
+  /* ── Stage head (dark pages) ── */
+  .stage-head { padding: 32px 24px 20px; }
+  .sh-name    { font-size: 36px; }
+  .sh-question { font-size: 13px; line-height: 1.55; }
+  .sh-badge   { font-size: 7px; padding: 3px 8px 2px; }
+  .sh-weeks   { font-size: 8px; margin-top: 12px; }
+  .sh-deliverable { font-size: 11px; }
+
+  /* ── Stage body: unstack 2-col grid ── */
+  .stage-body {
+    grid-template-columns: 1fr !important;
+  }
+  .stage-aside {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 24px !important;
+  }
+  .stage-main { padding: 0 24px 24px !important; }
+
+  /* ── Lesson rows ── */
+  .lesson-row { padding: 14px 0; gap: 10px 10px; }
+  .lr-name    { font-size: 11px; }
+  .lr-hook    { font-size: 11px; }
+
+  /* ── Live callout ── */
+  .live-callout { padding: 12px 14px; margin: 12px 0; }
+  .live-title   { font-size: 12px; }
+  .live-desc    { font-size: 11px; }
+
+  /* ── TOC ── */
+  .toc-stage-head { flex-wrap: wrap; gap: 8px; }
+  .toc-weeks      { margin-left: 0; }
+  .toc-item       { font-size: 12px; }
+  .toc-desc       { font-size: 9px; }
+
+  /* ── What's Included: 2-col → 1-col ── */
+  .includes-grid {
+    grid-template-columns: 1fr !important;
+    margin-top: 20px;
+  }
+
+  /* ── Community grid: 3-col → 1-col ── */
+  .community-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Learning steps: 4-col → 2-col ── */
+  .learning-steps {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── Instructor: side-by-side → stacked ── */
+  .instructor-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  .instructor-avatar {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  /* ── Spread hero ── */
+  .spread-hero   { padding: 48px 24px; }
+  .spread-title  { font-size: 36px; }
+  .spread-stats  { gap: 28px; margin-top: 32px; }
+  .spread-stat-num { font-size: 32px; }
+
+  /* ── Calendar: make horizontally scrollable ── */
+  .calendar-wrapper, .calendar-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cal-row { min-width: 560px; }
+
+  /* ── Closing page ── */
+  .closing-page  { padding: 56px 24px; min-height: auto; }
+  .closing-quote { font-size: 18px; line-height: 1.55; }
+
+  /* ── Back cover ── */
+  .back-cover    { padding: 40px 24px; min-height: auto; }
+  .back-wordmark { font-size: 9px; }
+  .back-tagline  { font-size: 11px; }
+  .back-contact  { font-size: 10px; flex-wrap: wrap; gap: 6px; }
+}
+
+/* ════════════════════════════════════════
+   SMALL MOBILE  (≤ 390px)
+════════════════════════════════════════ */
+@media (max-width: 390px) {
+  .cover-title, .cover-title-light { font-size: 28px; }
+  .sh-name    { font-size: 28px; }
+  .spread-title { font-size: 28px; }
+  .section-title { font-size: 18px; }
+  .learning-steps { grid-template-columns: 1fr !important; }
+  .inner, .inner.dense { padding: 28px 18px; }
+  .stage-head { padding: 28px 18px 16px; }
 }
 
 </style>
@@ -967,7 +1098,7 @@ body {
     <div class="cover-title">Brand Launch</div>
     <div class="cover-title-light">Program</div>
     <div class="cover-rule"></div>
-    <div class="cover-desc">Syllabus oficial del programa. Un recorrido de 12 semanas diseñado para fundadores que construyen su primera marca con estructura, claridad y posicionamiento real — desde la identidad del fundador hasta el plan de salida al mercado.</div>
+    <div class="cover-desc">Syllabus oficial del programa. Un recorrido de 12 semanas diseñado para fundadores que construyen su primera marca con estructura, claridad y posicionamiento real, desde la identidad del fundador hasta el plan de salida al mercado.</div>
   </div>
   <div class="cover-meta">
     <span>5 Etapas</span>
@@ -985,8 +1116,8 @@ body {
     <div class="accent-label">De qué trata este programa</div>
     <div class="accent-quote">La mayoría de los fundadores lanza antes de entenderse a sí mismos. El Brand Launch Program™ <strong>invierte ese orden.</strong></div>
     <div class="accent-body">
-      Antes de construir una presencia pública, un fundador necesita claridad interna: quién es, qué problema resuelve, para quién y por qué su solución es diferente. Este programa existe para construir esa claridad de manera sistemática — no intuitiva — en doce semanas.<br><br>
-      Cada etapa añade una capa de estructura. Cada ejercicio produce un entregable concreto que el participante evalúa usando criterios de pase o falla explícitos. Cada Live Session valida el trabajo acumulado antes de desbloquear la siguiente etapa. Al finalizar, el participante no tiene una idea de marca — tiene una marca funcional y un plan de 90 días para salir al mercado.
+      Antes de construir una presencia pública, un fundador necesita claridad interna: quién es, qué problema resuelve, para quién y por qué su solución es diferente. Este programa existe para construir esa claridad de manera sistemática en doce semanas.<br><br>
+      Cada etapa añade una capa de estructura. Cada ejercicio produce un entregable concreto que el fundador evalúa usando criterios de pase o falla explícitos. Cada Live Session valida el trabajo acumulado antes de desbloquear la siguiente etapa. Al finalizar, el fundador termina con una marca funcional y un plan de 90 días para salir al mercado.
     </div>
   </div>
 
@@ -1009,7 +1140,7 @@ body {
       <span class="toc-stage-name">Program Orientation</span>
       <span class="toc-weeks">Semana 0</span>
     </div>
-    <div class="toc-row"><span class="toc-num">00</span><span class="toc-item">Orientación del Programa — Cómo funciona el Brand Launch Program™ y qué requiere<em class="toc-desc">Entiende el modelo, los ritmos de trabajo y cómo sacarle el máximo al programa.</em></span><span class="toc-arrow">→</span></div>
+    <div class="toc-row"><span class="toc-num">00</span><span class="toc-item">Orientación del Programa: Cómo funciona el Brand Launch Program™ y qué requiere<em class="toc-desc">Entiende el modelo, los ritmos de trabajo y cómo sacarle el máximo al programa.</em></span><span class="toc-arrow">→</span></div>
   </div>
 
   <div class="toc-stage">
@@ -1030,7 +1161,7 @@ body {
       <span class="toc-stage-name">Terrain</span>
       <span class="toc-weeks">Semanas 3–4</span>
     </div>
-    <div class="toc-row"><span class="toc-num">05</span><span class="toc-item">ICP Builder — Ideal Customer Profile v1<em class="toc-desc">Define con precisión quién es tu cliente ideal y por qué te elegiría.</em></span><span class="toc-arrow">→</span></div>
+    <div class="toc-row"><span class="toc-num">05</span><span class="toc-item">ICP Builder: Ideal Customer Profile v1<em class="toc-desc">Define con precisión quién es tu cliente ideal y por qué te elegiría.</em></span><span class="toc-arrow">→</span></div>
     <div class="toc-row"><span class="toc-num">06</span><span class="toc-item">Pain &amp; Aspiration Map<em class="toc-desc">Entiende qué le duele a tu cliente y hacia dónde quiere llegar.</em></span><span class="toc-arrow">→</span></div>
     <div class="toc-row"><span class="toc-num">07</span><span class="toc-item">Problem Statement Framework<em class="toc-desc">Articula el problema que resuelves con claridad y relevancia real.</em></span><span class="toc-arrow">→</span></div>
     <div class="toc-row"><span class="toc-num">08</span><span class="toc-item">Competitive Landscape Sketch<em class="toc-desc">Mapea tu entorno competitivo para encontrar tu espacio único.</em></span><span class="toc-arrow">→</span></div>
@@ -1055,9 +1186,9 @@ body {
       <span class="toc-stage-name">Channel</span>
       <span class="toc-weeks">Semanas 8–9</span>
     </div>
-    <div class="toc-row"><span class="toc-num">14</span><span class="toc-item">Brand Voice Compass<em class="toc-desc">Define cómo habla tu marca: tono, estilo y las palabras que usas — y las que no.</em></span><span class="toc-arrow">→</span></div>
+    <div class="toc-row"><span class="toc-num">14</span><span class="toc-item">Brand Voice Compass<em class="toc-desc">Define cómo habla tu marca: tono, estilo y las palabras que usas y las que evitas.</em></span><span class="toc-arrow">→</span></div>
     <div class="toc-row"><span class="toc-num">15</span><span class="toc-item">Messaging Hierarchy Map<em class="toc-desc">Organiza tus mensajes del más estratégico al más específico.</em></span><span class="toc-arrow">→</span></div>
-    <div class="toc-row"><span class="toc-num">16</span><span class="toc-item">Channel Selection Matrix<em class="toc-desc">Decide dónde estar presente y por qué — sin dispersarte en todos lados.</em></span><span class="toc-arrow">→</span></div>
+    <div class="toc-row"><span class="toc-num">16</span><span class="toc-item">Channel Selection Matrix<em class="toc-desc">Decide dónde estar presente y con qué criterio, antes de producir una sola pieza.</em></span><span class="toc-arrow">→</span></div>
     <div class="toc-row"><span class="toc-num">17</span><span class="toc-item">Core Copy Suite<em class="toc-desc">Escribe los textos esenciales de tu marca: tagline, bio y propuesta de valor.</em></span><span class="toc-arrow">→</span></div>
   </div>
 
@@ -1071,7 +1202,7 @@ body {
     <div class="toc-row"><span class="toc-num">19</span><span class="toc-item">Milestone Setting Framework<em class="toc-desc">Define hitos medibles para los primeros 90 días post-lanzamiento.</em></span><span class="toc-arrow">→</span></div>
     <div class="toc-row"><span class="toc-num">20</span><span class="toc-item">First Five Customers Map<em class="toc-desc">Traza el camino para conseguir tus primeros cinco clientes reales.</em></span><span class="toc-arrow">→</span></div>
     <div class="toc-row"><span class="toc-num">21</span><span class="toc-item">Accountability System Builder<em class="toc-desc">Crea el sistema que te mantiene en movimiento después del programa.</em></span><span class="toc-arrow">→</span></div>
-    <div class="toc-row"><span class="toc-num">—</span><span class="toc-item">Live Session 5 · Graduation Checkpoint &amp; 90-Day Plan Presentation<em class="toc-desc">Presenta tu plan de 90 días y recibe retroalimentación final del grupo.</em></span><span class="toc-arrow">→</span></div>
+    <div class="toc-row"><span class="toc-num">·</span><span class="toc-item">Live Session 5 · Graduation Checkpoint &amp; 90-Day Plan Presentation<em class="toc-desc">Presenta tu plan de 90 días y recibe retroalimentación final del grupo.</em></span><span class="toc-arrow">→</span></div>
   </div>
 
   <div class="print-footer">
@@ -1091,15 +1222,15 @@ body {
   <div class="includes-grid">
     <div class="include-item">
   <div class="include-num">17</div>
-  <div><div class="include-label">Videos</div><div class="include-desc">Un video de orientación por etapa (8–12 min) más clips de ejercicios por pares de lecciones. Disponibles antes de cada sesión de trabajo — context primero, ejercicio después.</div></div>
+  <div><div class="include-label">Videos</div><div class="include-desc">Un video de orientación por etapa (8–12 min) más clips de ejercicios por pares de lecciones. Disponibles antes de cada sesión de trabajo: el contexto llega antes que el ejercicio.</div></div>
 </div>
     <div class="include-item">
   <div class="include-num">21</div>
-  <div><div class="include-label">Ejercicios</div><div class="include-desc">Un ejercicio por lección, cada uno con criterios de pase o falla explícitos. El participante auto-evalúa su trabajo usando la rúbrica del workbook antes de cada Live Session.</div></div>
+  <div><div class="include-label">Ejercicios</div><div class="include-desc">Un ejercicio por lección, cada uno con criterios de pase o falla explícitos. El fundador auto-evalúa su trabajo usando la rúbrica del workbook antes de cada Live Session.</div></div>
 </div>
     <div class="include-item">
   <div class="include-num">5</div>
-  <div><div class="include-label">Sesiones en Vivo</div><div class="include-desc">Checkpoints en vivo de 90 minutos al final de cada etapa. Son las únicas instancias de retroalimentación formal. El avance al siguiente stage depende de pasar la sesión — sin excepciones.</div></div>
+  <div><div class="include-label">Sesiones en Vivo</div><div class="include-desc">Checkpoints en vivo de 90 minutos al final de cada etapa. Son las únicas instancias de retroalimentación formal. El avance al siguiente etapa depende de pasar la sesión. Sin excepciones.</div></div>
 </div>
     <div class="include-item">
   <div class="include-num">5</div>
@@ -1107,11 +1238,11 @@ body {
 </div>
     <div class="include-item">
   <div class="include-num">1</div>
-  <div><div class="include-label">Sesión de Kickoff</div><div class="include-desc">Sesión de orientación de 60 minutos para toda la cohorte al inicio del programa. Establece el modelo SCRUM, las expectativas y el contrato de participación — antes de comenzar cualquier contenido.</div></div>
+  <div><div class="include-label">Sesión de Kickoff</div><div class="include-desc">Sesión de orientación de 60 minutos para toda la cohorte al inicio del programa. Establece el modelo SCRUM, las expectativas y el contrato de participación antes de arrancar el contenido.</div></div>
 </div>
     <div class="include-item">
   <div class="include-num">1</div>
-  <div><div class="include-label">Comunidad de Cohorte</div><div class="include-desc">Acceso al grupo de cohorte durante las 12 semanas. Un espacio de pares para compartir avances, desbloquear obstáculos y mantenerse en movimiento — no un feed de contenido.</div></div>
+  <div><div class="include-label">Comunidad de Cohorte</div><div class="include-desc">Acceso al grupo de cohorte durante las 12 semanas. Un espacio de pares para compartir avances, desbloquear obstáculos y mantenerse en movimiento durante las 12 semanas.</div></div>
 </div>
     <div class="include-item">
   <div class="include-num">1</div>
@@ -1119,7 +1250,7 @@ body {
 </div>
     <div class="include-item">
   <div class="include-num">1</div>
-  <div><div class="include-label">Checkpoint de Graduación</div><div class="include-desc">La Live Session 5 es también el checkpoint de graduación. El participante presenta su 90-Day Plan ante la cohorte completa. El programa termina aquí — el trabajo empieza el lunes siguiente.</div></div>
+  <div><div class="include-label">Checkpoint de Graduación</div><div class="include-desc">La Live Session 5 es también el checkpoint de graduación. El fundador presenta su 90-Day Plan ante la cohorte completa. El programa termina aquí. El trabajo empieza el lunes siguiente.</div></div>
 </div>
   </div>
 
@@ -1151,7 +1282,7 @@ body {
   <td>
     <span class="cal-stage-badge" style="background:#111">Kickoff</span><br>
     <span class="cal-name">Program Orientation</span>
-    <div class="cal-desc">Sesión de orientación · 60 min · Cohorte completa · No es contenido — es establecimiento de contrato</div>
+    <div class="cal-desc">Sesión de apertura con la cohorte completa. 60 minutos para establecer el contrato de participación.</div>
   </td>
   <td><span class="cal-deliverable">Contrato de participación · Acceso a workbook y videos</span></td>
 </tr>
@@ -1218,7 +1349,7 @@ body {
 <!-- ════════════ INSTRUCTOR ════════════ -->
 <div class="page inner">
   <div class="overline">Program Lead</div>
-  <div class="section-title">Tu Instructor</div>
+  <div class="section-title">Tu Guía</div>
   <div class="section-rule"></div>
 
   <div class="instructor-layout">
@@ -1231,18 +1362,18 @@ body {
       <div class="instructor-name">Daniel Flores Prudencio</div>
       <div class="instructor-title">Founder &amp; Lead Strategist · ROVER</div>
       <div class="instructor-bio">
-        <p>Daniel Flores Prudencio es el fundador y estratega principal de ROVER, una firma de estrategia de marca con sede en Querétaro, México. ROVER se especializa en diseñar marcas y construir sistemas de negocio escalables — desde el insight hasta la ejecución — para emprendedores y empresas en etapa de crecimiento en América Latina.</p>
+        <p>Daniel Flores Prudencio es el fundador y estratega principal de ROVER, una firma de estrategia de marca con sede en Querétaro, México. ROVER se especializa en diseñar marcas y construir sistemas de negocio escalables, del insight a la ejecución, para emprendedores y empresas en etapa de crecimiento en América Latina.</p>
         <p>Con formación en diseño estratégico, desarrollo de negocios y arquitectura de marca, Daniel trabaja con fundadores que necesitan pasar de una idea a una marca que el mercado puede entender, elegir y confiar. Su práctica combina pensamiento sistémico con una orientación profundamente humana: reconoce que detrás de cada decisión de marca hay una persona operando con información incompleta, tiempo limitado y capital escaso.</p>
-        <p>Su filosofía de trabajo está inspirada en los pioneros de la exploración espacial — científicos que no se detienen ante la imposibilidad aparente de un objetivo y que usan, y cuando es necesario inventan, las herramientas que necesitan para completar su misión. Esa mentalidad define cómo ROVER aborda cada proyecto.</p>
-        <p>El Brand Launch Program™ es la destilación más directa de esa metodología: el programa que Daniel habría querido tener cuando construyó su primera marca. Cada framework, cada ejercicio y cada checkpoint está diseñado para que el fundador avance por evidencia — no por intuición.</p>
-        <p style="color:var(--bronze); font-size:12px; font-style:italic;">Instructor principal de los 17 videos · Lead facilitador de los 5 Live Sessions · roverlab.mx · daniel@roverlab.mx</p>
+        <p>Su filosofía de trabajo está inspirada en los pioneros de la exploración espacial: científicos que no se detienen ante la imposibilidad aparente de un objetivo y que usan, y cuando es necesario inventan, las herramientas que necesitan para completar su misión. Esa mentalidad define cómo ROVER aborda cada proyecto.</p>
+        <p>El Brand Launch Program™ es la destilación más directa de esa metodología: el programa que Daniel habría querido tener cuando construyó su primera marca. Cada framework, cada ejercicio y cada checkpoint está diseñado para que el fundador avance por evidencia y criterio propio.</p>
+        <p style="color:var(--bronze); font-size:12px; font-style:italic;">Guía principal del Brand Launch Program™ en sus 17 videos y 5 Live Sessions.</p>
       </div>
     </div>
   </div>
 
   <div class="print-footer">
     <span class="pf-brand">R&nbsp;&nbsp;ROVER</span>
-    <span class="pf-section">Instructor</span>
+    <span class="pf-section">Guía</span>
     <span class="pf-page">roverlab.mx &nbsp;·&nbsp; 5 / 17</span>
   </div>
 </div>
@@ -1258,17 +1389,17 @@ body {
     <div class="community-item">
       <div class="community-icon">Cohort Group</div>
       <div class="community-name">Tu Cohorte</div>
-      <div class="community-desc">Fundadores en la misma etapa, trabajando en paralelo. El grupo de cohorte es un espacio de pares — para compartir avances, desbloquear obstáculos y mantenerse en movimiento durante las 12 semanas.</div>
+      <div class="community-desc">Fundadores en la misma etapa, trabajando en paralelo. El grupo de cohorte es un espacio de pares: comparten avances, desbloquean obstáculos y se mantienen en movimiento durante las 12 semanas.</div>
     </div>
     <div class="community-item">
       <div class="community-icon">Self-Assessment Rubric</div>
       <div class="community-name">Rúbrica de Auto-Evaluación</div>
-      <div class="community-desc">Cada ejercicio en el workbook incluye criterios de pase o falla explícitos. El participante evalúa su propio trabajo antes de cada Live Session — construyendo criterio propio, no dependencia del facilitador.</div>
+      <div class="community-desc">Cada ejercicio en el workbook incluye criterios de pase o falla explícitos. El fundador evalúa su propio trabajo antes de cada Live Session, con el objetivo de construir criterio propio.</div>
     </div>
     <div class="community-item">
       <div class="community-icon">Live Sessions</div>
       <div class="community-name">Validación en Vivo</div>
-      <div class="community-desc">Cinco sesiones de 90 minutos — una al final de cada etapa. Son la única instancia de retroalimentación formal. No hay sesiones de contenido: las Live Sessions son revisión, avance y cierre de cada stage.</div>
+      <div class="community-desc">Cinco sesiones de 90 minutos, una al final de cada etapa. Son la única instancia de retroalimentación formal. Las Live Sessions son revisión, avance y cierre de cada etapa.</div>
     </div>
   </div>
 
@@ -1286,15 +1417,15 @@ body {
   <div class="section-sub">Entregables concretos. Sin promesas abstractas.</div>
   <div class="section-rule"></div>
 
-  <div class="body-text">Al completar el Brand Launch Program™, cada participante habrá producido los siguientes entregables — evaluados mediante rúbrica de auto-evaluación y verificados en cada Live Session antes de avanzar a la siguiente etapa.</div>
+  <div class="body-text">Al completar el Brand Launch Program™, cada fundador habrá producido los siguientes entregables, evaluados mediante rúbrica de auto-evaluación y verificados en cada Live Session antes de avanzar a la siguiente etapa.</div>
 
   <div class="outcomes-grid">
     <div class="outcome-item"><div class="outcome-num">Outcome 01</div><div class="outcome-text">Un <strong>Brand Foundation Brief</strong> con historia de origen estructurada en puntos de inflexión, valores fundamentales demostrados (no aspiracionales), misión articulada y mapa honesto de capacidad y restricción operativa.</div></div>
     <div class="outcome-item"><div class="outcome-num">Outcome 02</div><div class="outcome-text">Un <strong>Customer &amp; Market Snapshot</strong> con perfil de cliente ideal específico y verificable, mapa de dolor en tres dimensiones (funcional, emocional, social), enunciado de problema con cadena de causalidad y análisis de landscape competitivo en tres categorías.</div></div>
     <div class="outcome-item"><div class="outcome-num">Outcome 03</div><div class="outcome-text">Un <strong>Offer Strategy Document</strong> con arquitectura de oferta descompuesta en cuatro componentes, propuesta de valor en una oración, matriz de diferenciación frente a competencia directa e indirecta, racionale de precio y resultado del fit test con criterio de pase o falla.</div></div>
     <div class="outcome-item"><div class="outcome-num">Outcome 04</div><div class="outcome-text">Un <strong>Brand Communication Kit</strong> con brújula de voz de marca, jerarquía de mensajes en tres niveles, selección de canales primarios justificada y Core Copy Suite: bio, one-liner y primer statement público.</div></div>
-    <div class="outcome-item"><div class="outcome-num">Outcome 05</div><div class="outcome-text">Un <strong>90-Day Launch Plan</strong> con planner de go-to-market secuenciado, hitos medibles, mapa de primeros cinco clientes con nombres reales y sistema de accountability basado en mecanismos — no en motivación.</div></div>
-    <div class="outcome-item"><div class="outcome-num">Outcome 06</div><div class="outcome-text">La capacidad de <strong>articular, defender y ejecutar</strong> tu estrategia de marca frente a clientes, socios e inversionistas — con la misma claridad y consistencia en una sala de junta que en una conversación casual.</div></div>
+    <div class="outcome-item"><div class="outcome-num">Outcome 05</div><div class="outcome-text">Un <strong>90-Day Launch Plan</strong> con planner de go-to-market secuenciado, hitos medibles, mapa de primeros cinco clientes con nombres reales y sistema de accountability basado en mecanismos concretos.</div></div>
+    <div class="outcome-item"><div class="outcome-num">Outcome 06</div><div class="outcome-text">La capacidad de <strong>articular, defender y ejecutar</strong> tu estrategia de marca frente a clientes, socios e inversionistas, con la misma claridad en una sala de junta que en una conversación casual.</div></div>
   </div>
 
   <div class="print-footer">
@@ -1320,22 +1451,22 @@ body {
     <div class="learning-step">
       <div class="step-num">2</div>
       <div class="step-label">Build</div>
-      <div class="step-body">El ejercicio en el workbook aplica el framework al negocio real del participante. El trabajo es auto-guiado — 2 a 3 horas por semana, en el tiempo y ritmo del fundador.</div>
+      <div class="step-body">El ejercicio en el workbook aplica el framework al negocio real del fundador. El trabajo es auto-guiado: dos a tres horas por semana, en el tiempo y ritmo del fundador.</div>
     </div>
     <div class="learning-step">
       <div class="step-num">3</div>
       <div class="step-label">Self-Assess</div>
-      <div class="step-body">Cada ejercicio tiene una rúbrica de pase o falla explícita en el workbook. El participante evalúa su propio trabajo antes de la Live Session y llega sabiendo si su entregable pasa o necesita iteración.</div>
+      <div class="step-body">Cada ejercicio tiene una rúbrica de pase o falla explícita en el workbook. El fundador evalúa su propio trabajo antes de la Live Session y llega sabiendo si su entregable pasa o necesita iteración.</div>
     </div>
     <div class="learning-step">
       <div class="step-num">4</div>
       <div class="step-label">Advance</div>
-      <div class="step-body">La Live Session es el único momento de retroalimentación formal. El participante presenta su trabajo ante el facilitador y la cohorte. El avance al siguiente stage se determina aquí — por claridad del trabajo, no por calendario.</div>
+      <div class="step-body">La Live Session es el único momento de retroalimentación formal. El fundador presenta su trabajo ante el facilitador y la cohorte. El avance al siguiente etapa se determina aquí por la claridad del trabajo entregado.</div>
     </div>
   </div>
 
   <div class="spacer-md"></div>
-  <div class="body-text" style="color:var(--ink-50); font-size:13px; font-style:italic;">El trabajo vago no avanza el gate. Esta es la regla más importante del programa y se establece en la sesión de kickoff. No es un estándar de perfección — es un estándar de especificidad.</div>
+  <div class="body-text" style="color:var(--ink-50); font-size:13px; font-style:italic;">El trabajo ambiguo no avanza a la siguiente etapa. Esta es la regla más importante del programa y se establece en la sesión de kickoff. El estándar que se exige es especificidad.</div>
 
   <div class="print-footer">
     <span class="pf-brand">R&nbsp;&nbsp;ROVER</span>
@@ -1371,11 +1502,11 @@ body {
   <div class="section-rule"></div>
 
   <div class="able-list">
-    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Articular con precisión</strong> quién eres como fundador, qué problema resuelves y por qué estás en posición única de resolverlo — en un discurso de dos minutos o en una sala de junta. Con los tres puntos de inflexión que lo prueban.</div></div>
-    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Describir a tu cliente ideal</strong> con suficiente especificidad para tomar decisiones de producto, precio y comunicación sin adivinar — incluyendo su dolor funcional, emocional y social, y el momento exacto en que busca una solución como la tuya.</div></div>
-    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Defender tu oferta y tu precio</strong> frente a alternativas competitivas — explicando no solo qué ofreces y cuánto cuesta, sino por qué un cliente específico debería elegirte, y qué diferencia puede sentir que las alternativas no le dan.</div></div>
+    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Articular con precisión</strong> quién eres como fundador, qué problema resuelves y por qué estás en posición única de resolverlo, en un discurso de dos minutos o en una sala de junta. Con los tres puntos de inflexión que lo prueban.</div></div>
+    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Describir a tu cliente ideal</strong> con suficiente especificidad para tomar decisiones de producto, precio y comunicación sin adivinar, considerando su dolor funcional, emocional y social, y el momento exacto en que busca una solución como la tuya.</div></div>
+    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Defender tu oferta y tu precio</strong> frente a alternativas competitivas: qué ofreces, cuánto cuesta, por qué un cliente específico debería elegirte y qué diferencia puede sentir que las alternativas no le dan.</div></div>
     <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Comunicar de manera consistente</strong> en todos los formatos y canales: con la misma voz, el mismo orden de mensajes y los mismos criterios de lo que tu marca dice, y lo que no dice, sin importar quién está escuchando.</div></div>
-    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Ejecutar los primeros 90 días</strong> con un plan secuenciado, hitos medibles, los nombres de tus primeros cinco clientes y un sistema de accountability que funciona cuando la motivación no está — porque está basado en mecanismos, no en intención.</div></div>
+    <div class="able-item"><div class="able-dot"></div><div class="able-text"><strong>Ejecutar los primeros 90 días</strong> con un plan secuenciado, hitos medibles, los nombres de tus primeros cinco clientes y un sistema de accountability basado en mecanismos que funciona con independencia de la motivación.</div></div>
   </div>
 
   <div class="print-footer">
@@ -1402,12 +1533,12 @@ body {
   <div class="stage-body">
     <div class="stage-aside">
       <div class="aside-label">Propósito</div>
-      <div class="aside-body">El Kickoff no es entrega de contenido — es establecimiento de contrato. Los participantes no son estudiantes, son constructores. La sesión establece el modelo SCRUM, las expectativas de avance, cómo usar el workbook y qué significa que el trabajo vago no pasa el gate.</div>
+      <div class="aside-body">El Kickoff es establecimiento de contrato. Los fundadores son constructores. La sesión establece el modelo SCRUM, las expectativas de avance, cómo usar el workbook y qué significa que el trabajo ambiguo no avanza a la siguiente etapa.</div>
       <div class="aside-outcomes">
         <div class="aside-label" style="margin-top:16px">Al finalizar</div>
-        <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">Modelo SCRUM comprendido — 5 stages, 5 Live Sessions, criterios de avance</div></div>
+        <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">Modelo SCRUM comprendido: 5 etapas, 5 Live Sessions y criterios de avance</div></div>
         <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">Workbook y biblioteca de videos accesibles y orientados</div></div>
-        <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">Estándar "el trabajo vago no avanza" establecido explícitamente</div></div>
+        <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">Estándar Estándar de especificidad establecido explícitamente</div></div>
         <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">Tarea asignada: ver V1.0 y comenzar Ejercicio 01 antes de la próxima sesión</div></div>
       </div>
     </div>
@@ -1426,7 +1557,7 @@ body {
 
   <div class="print-footer">
     <span class="pf-brand">R&nbsp;&nbsp;ROVER</span>
-    <span class="pf-section">Kickoff — Orientación</span>
+    <span class="pf-section">Kickoff · Orientación</span>
     <span class="pf-page">roverlab.mx &nbsp;·&nbsp; 11 / 17</span>
   </div>
 </div>
@@ -1460,7 +1591,7 @@ body {
   <div class="lr-num">01</div>
   <div>
     <div class="lr-name">Founder Origin Map</div>
-    <div class="lr-hook">Tu historia es información estructural, no un recurso de marketing.</div>
+    <div class="lr-hook">Tu historia es información estructural con valor estratégico.</div>
   </div>
   <div><div class="lr-video">V1.1</div></div>
 </div>
@@ -1478,7 +1609,7 @@ body {
   <div class="lr-num">03</div>
   <div>
     <div class="lr-name">Mission Statement Builder</div>
-    <div class="lr-hook">Un mission statement es una brújula interna, no un tagline.</div>
+    <div class="lr-hook">Un mission statement es una brújula interna: orienta decisiones, no audiencias.</div>
   </div>
   <div><div class="lr-video">V1.2</div></div>
 </div>
@@ -1496,7 +1627,7 @@ body {
   
 <div class="live-callout">
   <span class="live-callout-badge">Sesión 1</span>
-  <span class="live-callout-text"><strong>Revisión Signal · Final de Semana 2</strong> · Presentación del Brand Foundation Brief. El participante articula origen, valores y misión. Criterio de avance: coherencia entre los cuatro entregables y valores demostrados — no aspiracionales.</span>
+  <span class="live-callout-text"><strong>Revisión Signal · Final de Semana 2</strong> · Presentación del Brand Foundation Brief. El fundador articula origen, valores y misión. Criterio de avance: coherencia entre los cuatro entregables y valores demostrados en el trabajo entregado.</span>
 </div>
 
   <div class="print-footer">
@@ -1534,8 +1665,8 @@ body {
 <div class="lesson-row">
   <div class="lr-num">05</div>
   <div>
-    <div class="lr-name">ICP Builder — Ideal Customer Profile v1</div>
-    <div class="lr-hook">Tu cliente ideal es una persona específica, no un rango demográfico.</div>
+    <div class="lr-name">ICP Builder: Ideal Customer Profile v1</div>
+    <div class="lr-hook">Tu cliente ideal es una persona específica con nombre, contexto y dolor concreto.</div>
   </div>
   <div><div class="lr-video">V2.1</div></div>
 </div>
@@ -1562,7 +1693,7 @@ body {
   <div class="lr-num">08</div>
   <div>
     <div class="lr-name">Competitive Landscape Sketch</div>
-    <div class="lr-hook">La competencia no es tu enemigo, es evidencia de que existe un mercado.</div>
+    <div class="lr-hook">La competencia es evidencia de que existe un mercado. El trabajo es encontrar tu lugar en él.</div>
   </div>
   <div><div class="lr-video">V2.2</div></div>
 </div>
@@ -1571,7 +1702,7 @@ body {
   
 <div class="live-callout">
   <span class="live-callout-badge">Sesión 2</span>
-  <span class="live-callout-text"><strong>Revisión Terrain · Final de Semana 4</strong> · Presentación del Customer &amp; Market Snapshot. El participante describe a su ICP con nombre de tipo y situación específica, articula el problema desde la perspectiva del cliente. Criterio de avance: especificidad demostrable en el ICP y en el problem statement.</span>
+  <span class="live-callout-text"><strong>Revisión Terrain · Final de Semana 4</strong> · Presentación del Customer &amp; Market Snapshot. El fundador describe a su ICP con nombre de tipo y situación específica, articula el problema desde la perspectiva del cliente. Criterio de avance: especificidad demostrable en el ICP y en el problem statement.</span>
 </div>
 
   <div class="print-footer">
@@ -1628,7 +1759,7 @@ body {
   <div class="lr-num">11</div>
   <div>
     <div class="lr-name">Differentiation Matrix</div>
-    <div class="lr-hook">La diferenciación no es un claim que haces, es una diferencia que tu cliente puede sentir.</div>
+    <div class="lr-hook">La diferenciación es una diferencia que tu cliente puede sentir y articular.</div>
   </div>
   <div><div class="lr-video">V3.2</div></div>
 </div>
@@ -1655,7 +1786,7 @@ body {
   
 <div class="live-callout">
   <span class="live-callout-badge">Sesión 3</span>
-  <span class="live-callout-text"><strong>Revisión Prototype · Final de Semana 7</strong> · Presentación del Offer Strategy Document. El participante defiende su oferta frente a alternativas y justifica su precio. Criterio de avance: diferenciación articulable y precio con racionale específico — no basado en competencia o intuición.</span>
+  <span class="live-callout-text"><strong>Revisión Prototype · Final de Semana 7</strong> · Presentación del Offer Strategy Document. El fundador defiende su oferta frente a alternativas y justifica su precio. Criterio de avance: diferenciación articulable y precio con racionale específico y fundamentado.</span>
 </div>
 
   <div class="print-footer">
@@ -1682,7 +1813,7 @@ body {
   <div class="stage-body">
     <div class="stage-aside">
       <div class="aside-label">Lo que sucede aquí</div>
-      <div class="aside-body">La estrategia necesita lenguaje. Esta etapa construye la voz consistente de la marca, establece el orden en que se comunican los mensajes y determina en qué canales vale la pena estar — antes de producir una sola pieza de contenido.</div>
+      <div class="aside-body">La estrategia necesita lenguaje. Esta etapa construye la voz consistente de la marca, establece el orden en que se comunican los mensajes y determina en qué canales vale la pena estar, antes de producir una sola pieza de contenido.</div>
       <div class="aside-outcomes">
         <div class="aside-label" style="margin-top:16px">Entregable de Etapa</div>
         <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">Brand Communication Kit: voz de marca, jerarquía de mensajes en tres niveles, canales primarios justificados y Core Copy Suite (bio, one-liner, primer statement público)</div></div>
@@ -1694,7 +1825,7 @@ body {
   <div class="lr-num">14</div>
   <div>
     <div class="lr-name">Brand Voice Compass</div>
-    <div class="lr-hook">La voz de tu marca no es un personaje que interpretas, es una manera consistente de expresar lo que crees.</div>
+    <div class="lr-hook">La voz de tu marca es la manera consistente en que expresas lo que crees, en cualquier medio y contexto.</div>
   </div>
   <div><div class="lr-video">V4.1</div></div>
 </div>
@@ -1730,7 +1861,7 @@ body {
   
 <div class="live-callout">
   <span class="live-callout-badge">Sesión 4</span>
-  <span class="live-callout-text"><strong>Revisión Channel · Final de Semana 9</strong> · Presentación del Brand Communication Kit. El participante lee su one-liner, explica la jerarquía de mensajes y justifica la selección de canales. Criterio de avance: consistencia de voz y jerarquía clara — el mensaje primario debe ser inmediatamente comprensible.</span>
+  <span class="live-callout-text"><strong>Revisión Channel · Final de Semana 9</strong> · Presentación del Brand Communication Kit. El fundador lee su one-liner, explica la jerarquía de mensajes y justifica la selección de canales. Criterio de avance: consistencia de voz, jerarquía clara y un mensaje primario inmediatamente comprensible.</span>
 </div>
 
   <div class="print-footer">
@@ -1757,12 +1888,12 @@ body {
   <div class="stage-body">
     <div class="stage-aside">
       <div class="aside-label">Lo que sucede aquí</div>
-      <div class="aside-body">La última etapa traduce la estrategia en acción concreta. El participante construye un plan de go-to-market secuenciado, identifica sus primeros cinco clientes reales con nombre e instala un sistema de accountability que funciona cuando la motivación se agota.</div>
+      <div class="aside-body">La última etapa traduce la estrategia en acción concreta. El fundador construye un plan de go-to-market secuenciado, identifica sus primeros cinco clientes reales con nombre e instala un sistema de accountability que funciona cuando la motivación se agota.</div>
       <div class="aside-outcomes">
         <div class="aside-label" style="margin-top:16px">Entregable de Etapa</div>
         <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">90-Day Launch Plan: planner GTM secuenciado, hitos medibles, cinco clientes reales con nombre y sistema de accountability operativo</div></div>
         <div class="aside-label" style="margin-top:16px">Live Session 5 = Graduation</div>
-        <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">El programa termina aquí. El participante presenta ante la cohorte completa. El trabajo empieza el lunes siguiente.</div></div>
+        <div class="aside-outcome"><div class="aside-outcome-dot"></div><div class="aside-outcome-text">El programa termina aquí. El fundador presenta ante la cohorte completa. El trabajo empieza el lunes siguiente.</div></div>
       </div>
     </div>
     <div class="stage-lessons">
@@ -1771,7 +1902,7 @@ body {
   <div class="lr-num">18</div>
   <div>
     <div class="lr-name">90-Day Go-to-Market Planner</div>
-    <div class="lr-hook">Esto no es un brainstorm. Es un plan secuenciado: una acción a la vez, en el orden que tiene sentido.</div>
+    <div class="lr-hook">El go-to-market es un plan secuenciado: una acción a la vez, en el orden que tiene sentido.</div>
   </div>
   <div><div class="lr-video">V5.1</div></div>
 </div>
@@ -1780,7 +1911,7 @@ body {
   <div class="lr-num">19</div>
   <div>
     <div class="lr-name">Milestone Setting Framework</div>
-    <div class="lr-hook">Los milestones no son metas. Un milestone es donde te detienes, observas y decides si sigues en la misma dirección.</div>
+    <div class="lr-hook">Un milestone es donde te detienes, observas y decides si la dirección sigue siendo la correcta.</div>
   </div>
   <div><div class="lr-video">V5.1</div></div>
 </div>
@@ -1789,7 +1920,7 @@ body {
   <div class="lr-num">20</div>
   <div>
     <div class="lr-name">First Five Customers Map</div>
-    <div class="lr-hook">Tus primeros cinco clientes no son un demográfico. Son cinco personas reales que ya conoces o puedes alcanzar.</div>
+    <div class="lr-hook">Tus primeros cinco clientes son cinco personas reales con nombre, contexto y razón concreta para elegirte.</div>
   </div>
   <div><div class="lr-video">V5.2</div></div>
 </div>
@@ -1798,7 +1929,7 @@ body {
   <div class="lr-num">21</div>
   <div>
     <div class="lr-name">Accountability System Builder</div>
-    <div class="lr-hook">La motivación no es un sistema. Un sistema de accountability es un conjunto de mecanismos específicos que funcionan cuando la motivación se agota.</div>
+    <div class="lr-hook">Un sistema de accountability es un conjunto de mecanismos específicos que funcionan con independencia de la motivación.</div>
   </div>
   <div><div class="lr-video">V5.2</div></div>
 </div>
@@ -1807,7 +1938,7 @@ body {
   
 <div class="live-callout">
   <span class="live-callout-badge">Sesión 5</span>
-  <span class="live-callout-text"><strong>Checkpoint de Graduación · Final de Semana 12</strong> · Presentación del 90-Day Launch Plan completo ante la cohorte. Criterio de graduación: los cinco entregables de stage están aprobados, el plan es ejecutable y los primeros cinco clientes son personas reales con nombre. El programa cierra aquí.</span>
+  <span class="live-callout-text"><strong>Checkpoint de Graduación · Final de Semana 12</strong> · Presentación del 90-Day Launch Plan completo ante la cohorte. Criterio de graduación: los cinco entregables de etapa están aprobados, el plan es ejecutable y los primeros cinco clientes son personas reales con nombre. El programa cierra aquí.</span>
 </div>
 
   <div class="print-footer">
@@ -1820,7 +1951,7 @@ body {
 <!-- ════════════ CLOSING QUOTE ════════════ -->
 <div class="page closing-page">
   <div class="closing-quote">
-    "La mayoría de los fundadores no fracasa por falta de talento. Fracasa por falta de <em>claridad</em>. Este programa existe para resolver eso — antes de que el mercado lo haga por ellos."
+    "La mayoría de los fundadores no fracasa por falta de ideas o habilidad, sino por falta de claridad y un sistema de seguimiento. Este programa existe para resolver esas necesidades antes de que el mercado se los exija."
   </div>
   <div class="closing-attr">Daniel Flores Prudencio · Founder, ROVER</div>
 </div>
@@ -1828,7 +1959,7 @@ body {
 <!-- ════════════ BACK COVER ════════════ -->
 <div class="page back-cover">
   <div class="back-wordmark"><span>R</span> ROVER</div>
-  <div class="back-tagline">Human-centered brand strategy. From insight to execution.</div>
+  <div class="back-tagline"><span style="font-weight:400;">Human-centered brand strategy.</span> <span style="font-weight:300;">From insight to execution.</span></div>
   <div class="back-contact">
     <span>roverlab.mx</span>
     <span>daniel@roverlab.mx</span>
@@ -1839,7 +1970,19 @@ body {
 
 
 <!-- ════════════ PDF DOWNLOAD BUTTON ════════════ -->
-<button class="pdf-btn" onclick="window.print()" aria-label="Descargar PDF">
+<script>
+function downloadPDF() {
+  // If embedded in an iframe (e.g. Wix), open standalone in a new tab.
+  // The button works normally once the page is top-level.
+  if (window.self !== window.top) {
+    window.open(window.location.href, '_blank');
+    return;
+  }
+  window.print();
+}
+</script>
+
+<button class="pdf-btn" onclick="downloadPDF()" aria-label="Descargar PDF">
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M8 1v9M8 10l-3-3M8 10l3-3" stroke="#FAFAF7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M2 12v1.5A1.5 1.5 0 003.5 15h9a1.5 1.5 0 001.5-1.5V12" stroke="#FAFAF7" stroke-width="1.6" stroke-linecap="round"/>
